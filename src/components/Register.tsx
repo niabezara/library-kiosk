@@ -8,6 +8,7 @@ export default function Register() {
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     if (data) {
       console.log("navigacia gavaketo aq ");
+      console.log(data);
       closeCart();
     }
   };
