@@ -1,24 +1,24 @@
-export interface IBookData {
+export interface BookData {
   kind: string;
   totalItems: number;
-  items: IBook[];
+  items: Book[];
 }
 
-export interface IBookCategory {
+export interface BookCategory {
   id: string;
   title: string;
 }
 
-export interface IBook {
+export interface Book {
   author: any;
   title: any;
   kind: string;
   id: string;
   etag: string;
   selfLink: string;
-  volumeInfo: IVolumeInfo;
+  volumeInfo: VolumeInfo;
 }
-interface IVolumeInfo {
+interface VolumeInfo {
   title: string;
   subtitle: string;
   authors: string[];

@@ -1,16 +1,16 @@
 import axios from "axios";
-import { IBookData, IBookCategory } from "../interfaces/booksTypes";
+import { BookData, BookCategory } from "../interfaces/booksTypes";
 
 // *******************************************************************************
 export const getCategories = async (page: number, maxResults: number) => {
   const startIndex = page * maxResults;
-  const { data } = await axios.get<IBookData>(
+  const { data } = await axios.get<BookData>(
     `https://www.googleapis.com/books/v1/volumes?q=all&startIndex=${startIndex}&maxResults=${maxResults}&key=AIzaSyDoQBMMLlEH4vWD7_uqksULHH-6r7WC7EA`
   );
   const uniqueCategories = new Set<string>();
 
-  const categories: IBookCategory[] = data.items.reduce(
-    (acc: IBookCategory[], item) => {
+  const categories: BookCategory[] = data.items.reduce(
+    (acc: BookCategory[], item) => {
       const category = item.volumeInfo.categories?.[0];
 
       // Check if the category is not a duplicate
@@ -41,7 +41,7 @@ export const selectedCategory = async (
 ) => {
   const startIndex = page * maxResults;
 
-  const { data } = await axios.get<IBookData>(
+  const { data } = await axios.get<BookData>(
     `https://www.googleapis.com/books/v1/volumes?q=subject:${category}&startIndex=${startIndex}&maxResults=${maxResults}&key=AIzaSyDoQBMMLlEH4vWD7_uqksULHH-6r7WC7EA`
   );
   return data.items;
