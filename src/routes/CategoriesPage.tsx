@@ -1,5 +1,10 @@
 import React from "react";
+import Categories from "../components/Categories";
 
 export default function CategoriesPage() {
-  return <div>CategoriesPage</div>;
+  return (
+    <div>
+      <Categories />
+    </div>
+  );
 }
