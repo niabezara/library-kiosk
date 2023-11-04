@@ -7,6 +7,7 @@ export const getCategories = async (page: number, maxResults: number) => {
   const { data } = await axios.get<BookData>(
     `https://www.googleapis.com/books/v1/volumes?q=all&startIndex=${startIndex}&maxResults=${maxResults}&key=AIzaSyDoQBMMLlEH4vWD7_uqksULHH-6r7WC7EA`
   );
+
   const uniqueCategories = new Set<string>();
 
   const categories: BookCategory[] = data.items.reduce(
