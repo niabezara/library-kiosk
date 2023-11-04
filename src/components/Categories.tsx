@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
 import { getCategories } from "../api/books";
+import { UsePagination } from "../context/PaginationContext";
 
 export default function Categories() {
-  const [currentPage, setCurrentPage] = useState(1);
+  const { currentPage, handlePrevPage, handleNextPage } = UsePagination();
   const {
     data: categories,
     isLoading,
@@ -19,15 +20,7 @@ export default function Categories() {
   if (isError) {
     return <div>Error fetching data</div>;
   }
-  const handleNextPage = () => {
-    setCurrentPage(currentPage + 1);
-  };
 
-  const handlePrevPage = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
   return (
     <>
       <div>
