@@ -1,16 +1,19 @@
+import { selectedCategory } from "../api/books";
 import { useQuery } from "react-query";
-import { getCategories } from "../api/books";
 import { UsePagination } from "../context/PaginationContext";
-import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-export default function Categories() {
+export default function Selected() {
+  const location = useLocation();
+  const category = location.pathname.split("/category/")[1];
   const { currentPage, handlePrevPage, handleNextPage } = UsePagination();
+
   const {
-    data: categories,
+    data: books,
     isLoading,
     isError,
-  } = useQuery(["categories", currentPage], () =>
-    getCategories(currentPage, 7)
+  } = useQuery(["books", currentPage], () =>
+    selectedCategory(currentPage, 7, category)
   );
 
   if (isLoading) {
@@ -20,19 +23,16 @@ export default function Categories() {
   if (isError) {
     return <div>Error fetching data</div>;
   }
-
   return (
-    <>
-      <div>
-        {categories?.map((category) => (
-          <div key={category.id}>
-            <Link to={`/category/${category.title}`}>{category.title}</Link>
-          </div>
-        ))}
-      </div>
+    <div>
+      {books?.map((book, index) => (
+        <h1 key={`${book.title}-${book.author}-${index}`}>
+          {book.volumeInfo.title}
+        </h1>
+      ))}
       <button onClick={handlePrevPage}>Previous Page</button>
       <span>Page {currentPage}</span>
       <button onClick={handleNextPage}>Next Page</button>
-    </>
+    </div>
   );
 }

@@ -10,6 +10,8 @@ export interface IBookCategory {
 }
 
 export interface IBook {
+  author: any;
+  title: any;
   kind: string;
   id: string;
   etag: string;
