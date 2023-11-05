@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import ReactDom from "react-dom";
-import styled from "styled-components";
+import { Div, Overlay } from "../../styles/RegistrationModalStyles.ts/Style";
 
 interface OrderModalProps {
   open: boolean;
@@ -16,6 +16,7 @@ export default function OrderModal({
   const portalElement = document.getElementById("portal");
   const AuthRef = useRef<HTMLDivElement>(null);
 
+  // authomaticaly close the modal
   useEffect(() => {
     const handler = (event: any) => {
       if (AuthRef.current && !AuthRef.current.contains(event.target as Node)) {
@@ -38,27 +39,3 @@ export default function OrderModal({
     portalElement
   );
 }
-
-const Overlay = styled.div`
-  position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 100;
-  @media (min-width: 500px) {
-    overflow-x: hidden;
-  }
-`;
-
-const Div = styled.div`
-  position: fixed;
-  width: 100%;
-  max-width: 40.5625rem;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-
-  @media (min-width: 900px) {
-    transform: translate(-50%, -50%);
-  }
-`;

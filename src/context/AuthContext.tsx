@@ -22,9 +22,12 @@ export function useAuth() {
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [openModal, setOpenModal] = useState(false);
 
+  // open modal
   const openRegistration = () => {
     setOpenModal((prevOpenModal) => !prevOpenModal);
   };
+
+  // close modal
   const closeCart = () => {
     setOpenModal(false);
   };

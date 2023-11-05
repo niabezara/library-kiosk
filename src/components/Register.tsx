@@ -5,6 +5,7 @@ import { useAuth } from "../context/AuthContext";
 export default function Register() {
   const { register, handleSubmit } = useForm<IFormInput>();
   const { closeCart } = useAuth();
+
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     if (data) {
       console.log("navigacia gavaketo aq ");
