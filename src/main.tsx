@@ -5,17 +5,20 @@ import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { PaginationProvider } from "./context/PaginationContext.tsx";
 import { AuthProvider } from "./context/AuthContext.tsx";
+import { LibraryProvider } from "./context/LibraryContext.tsx";
 
 const queryClient = new QueryClient();
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <AuthProvider>
-          <PaginationProvider>
-            <App />
-          </PaginationProvider>
-        </AuthProvider>
+        <LibraryProvider>
+          <AuthProvider>
+            <PaginationProvider>
+              <App />
+            </PaginationProvider>
+          </AuthProvider>
+        </LibraryProvider>
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>

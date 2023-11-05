@@ -12,6 +12,7 @@ interface AuthContextProps {
   openRegistration: () => void;
   openModal: boolean;
   closeCart: () => void;
+  setSession: Dispatch<SetStateAction<boolean>>;
 }
 
 const AuthContext = createContext<AuthContextProps>({} as AuthContextProps);
@@ -22,6 +23,7 @@ export function useAuth() {
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [openModal, setOpenModal] = useState(false);
+  const [session, setSession] = useState(false);
 
   // open modal
   const openRegistration = () => {
@@ -35,7 +37,13 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <AuthContext.Provider
-      value={{ openRegistration, openModal, setOpenModal, closeCart }}
+      value={{
+        openRegistration,
+        openModal,
+        setOpenModal,
+        closeCart,
+        setSession,
+      }}
     >
       {children}
     </AuthContext.Provider>

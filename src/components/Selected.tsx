@@ -5,13 +5,14 @@ import { useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Modal from "../components/modal/RegisterModal";
 import Register from "./Register";
+import { UseLibrary } from "../context/LibraryContext";
 
 export default function Selected() {
   const location = useLocation();
   const category = location.pathname.split("/category/")[1];
   const { currentPage, handlePrevPage, handleNextPage } = UsePagination();
   const { openRegistration, openModal, setOpenModal } = useAuth();
-
+  const { selectItem } = UseLibrary();
   const {
     data: books,
     isLoading,
@@ -33,7 +34,10 @@ export default function Selected() {
       {books?.map((book, index) => (
         <div
           key={`${book.title}-${book.author}-${index}`}
-          onClick={openRegistration}
+          onClick={() => {
+            selectItem(book.id);
+            openRegistration();
+          }}
         >
           <h1>{book.volumeInfo.title}</h1>
         </div>

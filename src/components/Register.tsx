@@ -1,16 +1,14 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { IFormInput } from "../interfaces/registrationTypes";
 import { useAuth } from "../context/AuthContext";
-import { useMutation, useQuery } from "react-query";
-import { useState } from "react";
-import axios from "axios";
+import { useQuery } from "react-query";
 import fetchUsers from "../api/Login";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const { register, handleSubmit } = useForm<IFormInput>();
-  const [failed, setfailed] = useState<boolean>(false);
-  const { closeCart } = useAuth();
-
+  const { closeCart, setSession } = useAuth();
+  const navigate = useNavigate();
   const { data: users } = useQuery("users", fetchUsers);
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
@@ -19,13 +17,11 @@ export default function Register() {
       data.userName === users.name &&
       data.password === users.password
     ) {
-      console.log("navigacia gavaketo aq");
+      setSession(true);
       closeCart();
-      console.log(data);
-      // Additional logic for a successful login
+      navigate("/BorrowedPage");
     } else {
       console.log("Invalid password");
-      // Additional logic for an invalid login
     }
   };
 
