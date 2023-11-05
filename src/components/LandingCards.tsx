@@ -1,14 +1,17 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Card from "./Card";
 
 export default function LandingCards() {
+  const navigate = useNavigate();
+
+  const handleBorrowBook = () => {
+    navigate("/categories");
+  };
+  const handleReturnBook = () => {};
   return (
     <div>
-      <Link to="/categories">
-        <div>borrow book</div>
-      </Link>
-
-      <div>return book</div>
+      <Card title={"Borrow Book"} img="" onClick={handleBorrowBook} />
+      <Card title={"Return Book"} img="" onClick={handleReturnBook} />
     </div>
   );
 }

@@ -26,7 +26,9 @@ export default function Categories() {
       <div>
         {categories?.map((category) => (
           <div key={category.id}>
-            <Link to={`/category/${category.title}`}>{category.title}</Link>
+            <Link to={`/category/?categoryId=${category.title}`}>
+              {category.title}
+            </Link>
           </div>
         ))}
       </div>

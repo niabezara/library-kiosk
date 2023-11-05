@@ -2,17 +2,17 @@ import React, { useEffect, useRef } from "react";
 import ReactDom from "react-dom";
 import { Div, Overlay } from "../../styles/RegistrationModalStyles.ts/Style";
 
-interface OrderModalProps {
+interface LoginModalProps {
   open: boolean;
   setOpenModal: React.Dispatch<React.SetStateAction<boolean>>;
   children: React.ReactNode;
 }
 
-export default function OrderModal({
+export default function LoginModal({
   open,
   children,
   setOpenModal,
-}: OrderModalProps) {
+}: LoginModalProps) {
   const portalElement = document.getElementById("portal");
   const AuthRef = useRef<HTMLDivElement>(null);
 

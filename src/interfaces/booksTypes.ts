@@ -10,8 +10,8 @@ export interface BookCategory {
 }
 
 export interface Book {
-  author: any;
-  title: any;
+  author: string;
+  title: string;
   kind: string;
   id: string;
   etag: string;

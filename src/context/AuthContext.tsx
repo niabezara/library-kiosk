@@ -5,13 +5,13 @@ import {
   useContext,
   useState,
 } from "react";
-import { UserState } from "../interfaces/userTypes";
 
 interface AuthContextProps {
   setOpenModal: Dispatch<SetStateAction<boolean>>;
   openRegistration: () => void;
   openModal: boolean;
   closeCart: () => void;
+  session: boolean;
   setSession: Dispatch<SetStateAction<boolean>>;
 }
 
@@ -23,7 +23,9 @@ export function useAuth() {
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [openModal, setOpenModal] = useState(false);
-  const [session, setSession] = useState(false);
+  const [session, setSession] = useState(
+    localStorage.getItem("token") !== null
+  );
 
   // open modal
   const openRegistration = () => {
@@ -43,6 +45,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         setOpenModal,
         closeCart,
         setSession,
+        session,
       }}
     >
       {children}

@@ -17,9 +17,10 @@ export default function Register() {
       data.userName === users.name &&
       data.password === users.password
     ) {
+      localStorage.setItem("token", users);
       setSession(true);
       closeCart();
-      navigate("/BorrowedPage");
+      navigate("/Nia");
     } else {
       console.log("Invalid password");
     }
