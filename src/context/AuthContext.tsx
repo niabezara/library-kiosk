@@ -5,6 +5,7 @@ import {
   useContext,
   useState,
 } from "react";
+import { UserState } from "../interfaces/userTypes";
 
 interface AuthContextProps {
   setOpenModal: Dispatch<SetStateAction<boolean>>;
