@@ -28,6 +28,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const closeCart = () => {
     setOpenModal(false);
   };
+
   return (
     <AuthContext.Provider
       value={{ openRegistration, openModal, setOpenModal, closeCart }}
