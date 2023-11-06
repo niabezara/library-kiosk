@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Div, Overlay } from "../../styles/RegistrationModalStyles.ts/Style";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { UseLibrary } from "../../context/LibraryContext";
-import { toast } from "react-toastify";
 
 interface ReturnModalProps {
   children: React.ReactNode;

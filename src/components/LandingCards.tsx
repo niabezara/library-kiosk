@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { UseLibrary } from "../context/LibraryContext";
 import { showInfoMessage } from "../utils/InformartionMessages";
-import { useState } from "react";
 import ReturnModal from "./modal/ReturnBookModal";
 
 export default function LandingCards() {
