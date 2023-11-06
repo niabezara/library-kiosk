@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 interface Card {
@@ -7,7 +8,12 @@ interface Card {
 }
 const Card = ({ title, img, onClick }: Card) => {
   return (
-    <CardDiv className="card" onClick={onClick}>
+    <CardDiv
+      className="card"
+      onClick={onClick}
+      as={motion.div}
+      whileHover={{ scale: 0.9, opacity: 1 }}
+    >
       <button>{title}</button>
       <img src={img} alt="" />
     </CardDiv>
@@ -18,20 +24,25 @@ export default Card;
 
 const CardDiv = styled.div`
   align-items: center;
-  width: 100%;
   justify-content: center;
   width: 100%;
   display: flex;
-  border: 3px solid red;
+  border: 1px solid rgb(219, 219, 232);
+  border-radius: 2rem;
   flex-direction: column-reverse;
+  padding: 2rem;
+
   button {
     z-index: 10;
     bottom: 0;
-    background-color: transparent;
-    border: 2px solid black;
-    color: #8653e4;
+    background-color: #610c9f;
+    color: rgb(255, 255, 255);
     font-weight: 700;
-    padding: 1rem;
+    font-size: 2.2rem;
+    padding: 2rem 3rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
   }
   img {
     z-index: 8;

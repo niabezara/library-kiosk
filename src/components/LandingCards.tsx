@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Card from "./Card";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export default function LandingCards() {
   const navigate = useNavigate();
@@ -11,7 +12,13 @@ export default function LandingCards() {
   const handleReturnBook = () => {};
   return (
     <Cotainer>
-      <h1>Library Kiosk</h1>
+      <motion.h1
+        initial={{ y: -250 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", stiffness: 50 }}
+      >
+        Library Kiosk
+      </motion.h1>
       <Wrap>
         <Card
           title={"Borrow Book"}
@@ -33,8 +40,10 @@ const Cotainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 2rem;
   h1 {
-    font-size: 3.2rem;
+    font-size: 3.6rem;
+    color: #610c9f;
   }
 `;
 
