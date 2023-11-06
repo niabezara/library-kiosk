@@ -1,12 +1,11 @@
 import { selectedCategory } from "../api/books";
 import { useQuery } from "react-query";
 import { UsePagination } from "../context/PaginationContext";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Modal from "./modal/LoginModal";
 import BorrowModal from "./modal/BookBorrowed";
 import Register from "./Authentication";
-import { useState } from "react";
 import { UseLibrary } from "../context/LibraryContext";
 
 export default function CategoryDetail() {
@@ -15,16 +14,15 @@ export default function CategoryDetail() {
   const categoryId = searchParams.get("categoryId");
   const { currentPage, handlePrevPage, handleNextPage } = UsePagination();
   const { openRegistration, openModal, setOpenModal } = useAuth();
-  const { BorrowModalOpen, setBorrowModalOpen, selectItem, openModalBorrow } =
-    UseLibrary();
+  const { BorrowModalOpen, selectItem } = UseLibrary();
 
-  // const {
-  //   data: books,
-  //   isLoading,
-  //   isError,
-  // } = useQuery(["books", currentPage], () =>
-  //   selectedCategory(currentPage, 7, categoryId)
-  // );
+  const {
+    data: books,
+    isLoading,
+    isError,
+  } = useQuery(["books", currentPage], () =>
+    selectedCategory(currentPage, 7, categoryId)
+  );
 
   if (isLoading) {
     return <div>Loading...</div>;

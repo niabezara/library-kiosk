@@ -2,14 +2,29 @@ import { useNavigate } from "react-router-dom";
 import Card from "./Card";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { UseLibrary } from "../context/LibraryContext";
+import { showInfoMessage } from "../utils/InformartionMessages";
+import { useState } from "react";
+import ReturnModal from "./modal/ReturnBookModal";
 
 export default function LandingCards() {
   const navigate = useNavigate();
+  const { matchingBooks, HandleReturnModal, returnModal } = UseLibrary();
+
+  const handleReturnBook = () => {
+    if (matchingBooks.length === 0) {
+      return showInfoMessage(
+        "No books have been borrowed yet. Borrow a book to return."
+      );
+    } else {
+      HandleReturnModal();
+    }
+  };
 
   const handleBorrowBook = () => {
     navigate("/categories");
   };
-  const handleReturnBook = () => {};
+
   return (
     <Cotainer>
       <motion.h1
@@ -31,6 +46,7 @@ export default function LandingCards() {
           onClick={handleReturnBook}
         />
       </Wrap>
+      <ReturnModal open={returnModal} children={undefined} />
     </Cotainer>
   );
 }

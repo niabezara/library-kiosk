@@ -2,24 +2,29 @@ import { useQuery } from "react-query";
 import { getCategories } from "../api/books";
 import { UsePagination } from "../context/PaginationContext";
 import { Link } from "react-router-dom";
+import LoadingSpinner from "../utils/Spinner";
 
 export default function Categories() {
   const { currentPage, handlePrevPage, handleNextPage } = UsePagination();
-  // const {
-  //   data: categories,
-  //   isLoading,
-  //   isError,
-  // } = useQuery(["categories", currentPage], () =>
-  //   getCategories(currentPage, 7)
-  // );
+  const {
+    data: categories,
+    isLoading,
+    isError,
+  } = useQuery(["categories", currentPage], () =>
+    getCategories(currentPage, 7)
+  );
 
-  // if (isLoading) {
-  //   return <div>Loading...</div>;
-  // }
+  if (isLoading) {
+    return (
+      <div>
+        <LoadingSpinner />
+      </div>
+    );
+  }
 
-  // if (isError) {
-  //   return <div>Error fetching data</div>;
-  // }
+  if (isError) {
+    return <div>Error fetching data</div>;
+  }
 
   return (
     <>

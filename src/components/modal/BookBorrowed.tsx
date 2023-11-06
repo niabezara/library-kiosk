@@ -9,8 +9,7 @@ interface BorrowModalProps {
 }
 
 export default function BorrowModal({ open }: BorrowModalProps) {
-  // const portalElement = document.getElementById("portal");
-  const { matchingBooks } = UseLibrary();
+  const { matchingBooks, setBorrowModalOpen } = UseLibrary();
 
   //NOte aq unda daimapos archeulebi
 
@@ -19,13 +18,18 @@ export default function BorrowModal({ open }: BorrowModalProps) {
     <>
       <Overlay />
       <Div>
+        <h1>Borrow Confirmation</h1>
         <h1>Keep Your Book ID</h1>
+
         <h1>
-          {matchingBooks.map((item: any) => (
-            <div key={item.id}>{item}</div>
+          {matchingBooks.map((item: any, id: number) => (
+            <>
+              <div key={id}>{item}</div>
+              <p>{item.title}</p>
+            </>
           ))}
         </h1>
-        <Link to="/">
+        <Link to="/" onClick={() => setBorrowModalOpen(false)}>
           <button>Back to home page</button>
         </Link>
       </Div>
