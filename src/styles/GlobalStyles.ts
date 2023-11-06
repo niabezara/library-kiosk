@@ -13,9 +13,9 @@ export default createGlobalStyle`
  
   body {
    font-weight: 400;
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
   
-    overflow-x: hidden;
 
 
 /* &::-webkit-scrollbar {

@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Card from "./Card";
+import styled from "styled-components";
 
 export default function LandingCards() {
   const navigate = useNavigate();
@@ -9,9 +10,23 @@ export default function LandingCards() {
   };
   const handleReturnBook = () => {};
   return (
-    <div>
-      <Card title={"Borrow Book"} img="" onClick={handleBorrowBook} />
-      <Card title={"Return Book"} img="" onClick={handleReturnBook} />
-    </div>
+    <Wrap>
+      <Card
+        title={"Borrow Book"}
+        img="./assets/borrow-book.jpg"
+        onClick={handleBorrowBook}
+      />
+      <Card
+        title={"Return Book"}
+        img="./assets/return-book.jpg"
+        onClick={handleReturnBook}
+      />
+    </Wrap>
   );
 }
+
+const Wrap = styled.div`
+  @media screen and (min-width: 900px) {
+    display: flex;
+  }
+`;

@@ -15,15 +15,16 @@ export default function CategoryDetail() {
   const categoryId = searchParams.get("categoryId");
   const { currentPage, handlePrevPage, handleNextPage } = UsePagination();
   const { openRegistration, openModal, setOpenModal } = useAuth();
-  const { BorrowModalOpen, setBorrowModalOpen, selectItem } = UseLibrary();
+  const { BorrowModalOpen, setBorrowModalOpen, selectItem, openModalBorrow } =
+    UseLibrary();
 
-  const {
-    data: books,
-    isLoading,
-    isError,
-  } = useQuery(["books", currentPage], () =>
-    selectedCategory(currentPage, 7, categoryId)
-  );
+  // const {
+  //   data: books,
+  //   isLoading,
+  //   isError,
+  // } = useQuery(["books", currentPage], () =>
+  //   selectedCategory(currentPage, 7, categoryId)
+  // );
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -51,7 +52,9 @@ export default function CategoryDetail() {
       <button onClick={handleNextPage}>Next Page</button>
       {localStorage.getItem("token") ? (
         <>
-          <BorrowModal open={BorrowModalOpen} children={undefined} />
+          {BorrowModalOpen && (
+            <BorrowModal open={BorrowModalOpen} children={undefined} />
+          )}
         </>
       ) : (
         <Modal open={openModal} setOpenModal={setOpenModal}>

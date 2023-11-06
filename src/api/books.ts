@@ -49,18 +49,3 @@ export const selectedCategory = async (
 
   return data.items;
 };
-
-// *********************************
-// export const fetchAllBooks = async () => {
-//   let booksAr = [];
-//   const { data } = await axios.get<BookData>(
-//     `${BOOKS_API}/volumes?q=react&key=AIzaSyDoQBMMLlEH4vWD7_uqksULHH-6r7WC7EA`
-//   );
-
-//   for (const cat of data.items) {
-//     const res = await axios(cat.selfLink);
-//     booksAr.push(res.data);
-//   }
-
-//   return data.items;
-// };

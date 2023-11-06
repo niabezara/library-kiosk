@@ -20,7 +20,7 @@ export default function Register() {
       localStorage.setItem("token", users);
       setSession(true);
       closeCart();
-      navigate("/Nia");
+      navigate("/categories");
     } else {
       console.log("Invalid password");
     }

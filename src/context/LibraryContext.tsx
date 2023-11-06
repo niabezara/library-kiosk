@@ -8,6 +8,7 @@ import {
 
 interface LibraryContextProps {
   selectItem: (itemId: string) => void;
+  openModalBorrow: () => void;
   BorrowModalOpen: boolean;
   matchingBooks: any;
   setBorrowModalOpen: Dispatch<SetStateAction<boolean>>;
@@ -28,7 +29,12 @@ export function LibraryProvider({ children }: { children: React.ReactNode }) {
   const selectItem = (itemId: string) => {
     console.log("item_id", itemId);
     setMatchingBooks((prevMatchingBooks) => [...prevMatchingBooks, itemId]);
+    setBorrowModalOpen((prevOpenModal) => !prevOpenModal);
   };
+
+  console.log(matchingBooks);
+
+  const openModalBorrow = () => {};
 
   return (
     <LibraryContext.Provider
@@ -36,6 +42,7 @@ export function LibraryProvider({ children }: { children: React.ReactNode }) {
         selectItem,
         matchingBooks,
         BorrowModalOpen,
+        openModalBorrow,
         setBorrowModalOpen,
       }}
     >
