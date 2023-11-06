@@ -4,7 +4,10 @@ import { UsePagination } from "../context/PaginationContext";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Modal from "./modal/LoginModal";
+import BorrowModal from "./modal/BookBorrowed";
 import Register from "./Authentication";
+import { useState } from "react";
+import { UseLibrary } from "../context/LibraryContext";
 
 export default function CategoryDetail() {
   const location = useLocation();
@@ -12,8 +15,7 @@ export default function CategoryDetail() {
   const categoryId = searchParams.get("categoryId");
   const { currentPage, handlePrevPage, handleNextPage } = UsePagination();
   const { openRegistration, openModal, setOpenModal } = useAuth();
-  // const { selectItem, selectedItemId } = UseLibrary();
-  const navigate = useNavigate();
+  const { BorrowModalOpen, setBorrowModalOpen, selectItem } = UseLibrary();
 
   const {
     data: books,
@@ -37,6 +39,7 @@ export default function CategoryDetail() {
         <div
           key={book.id}
           onClick={() => {
+            selectItem(book.id);
             openRegistration();
           }}
         >
@@ -47,7 +50,9 @@ export default function CategoryDetail() {
       <span>Page {currentPage}</span>
       <button onClick={handleNextPage}>Next Page</button>
       {localStorage.getItem("token") ? (
-        ""
+        <>
+          <BorrowModal open={BorrowModalOpen} children={undefined} />
+        </>
       ) : (
         <Modal open={openModal} setOpenModal={setOpenModal}>
           <Register />

@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import GlobalStyle from "./styles/GlobalStyles";
 import HomePage from "./routes/HomePage";
 import CategoriesPage from "./routes/CategoriesPage";
-import CategoryDetail from "./routes/CategoryDetailPage";
+import CategoryDetailPage from "./routes/CategoryDetailPage";
 
 function App() {
   return (
@@ -11,8 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/categories" element={<CategoriesPage />} />
-        <Route path="/categoryDetail" element={<CategoryDetail />} />
-        {/* <Route path="/Nia" element={<Nia />} /> */}
+        <Route path="/category" element={<CategoryDetailPage />} />
       </Routes>
     </>
   );
