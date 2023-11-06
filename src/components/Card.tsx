@@ -22,6 +22,7 @@ const CardDiv = styled.div`
   justify-content: center;
   width: 100%;
   display: flex;
+  border: 3px solid red;
   flex-direction: column-reverse;
   button {
     z-index: 10;
