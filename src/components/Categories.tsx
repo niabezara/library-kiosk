@@ -11,11 +11,9 @@ import {
   CarouselItems,
   CarouselWrapper,
 } from "../styles/Carousel";
-import { useState } from "react";
 
 export default function Categories() {
   const { currentPage, handlePrevPage, handleNextPage } = UsePagination();
-  const [activeIndex, setActiveIndex] = useState(0);
   const {
     data: categories,
     isLoading,
@@ -41,7 +39,6 @@ export default function Categories() {
   if (isError) {
     return <div>Error fetching data</div>;
   }
-  const currentTransform = -activeIndex * 100;
 
   return (
     <>
@@ -49,7 +46,6 @@ export default function Categories() {
         <CarouselWrapper>
           <CarouselItems
             className="carousel-items"
-            style={{ transform: `translateX(${currentTransform}%)` }}
           >
             {categories?.map((category) => (
               <CarouselItem key={category.id}>
