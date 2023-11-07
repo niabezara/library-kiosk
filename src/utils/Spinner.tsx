@@ -7,9 +7,9 @@ export default function LoadingSpinner() {
       style={{
         display: "flex",
         justifyContent: "center",
-        minHeight: "100vh",
+        // minHeight: "100vh",
         alignItems: "center",
-        background: "#F8F6F4",
+        // background: "#F8F6F4",
       }}
     >
       <DotLoader color="#66347F" />

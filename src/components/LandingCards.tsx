@@ -25,14 +25,7 @@ export default function LandingCards() {
   };
 
   return (
-    <Cotainer>
-      <motion.h1
-        initial={{ y: -250 }}
-        animate={{ y: 0 }}
-        transition={{ type: "spring", stiffness: 50 }}
-      >
-        Library Kiosk
-      </motion.h1>
+    <Container>
       <Wrap>
         <Card
           title={"Borrow Book"}
@@ -46,14 +39,15 @@ export default function LandingCards() {
         />
       </Wrap>
       <ReturnModal open={returnModal} children={undefined} />
-    </Cotainer>
+    </Container>
   );
 }
 
-const Cotainer = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 2rem;
   align-items: center;
   margin: 2rem;
   h1 {
@@ -63,8 +57,12 @@ const Cotainer = styled.div`
 `;
 
 const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   @media screen and (min-width: 700px) {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 2rem;
     justify-content: center;

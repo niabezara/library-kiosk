@@ -4,7 +4,7 @@ import { UsePagination } from "../context/PaginationContext";
 import { Link } from "react-router-dom";
 import LoadingSpinner from "../utils/Spinner";
 import styled from "styled-components";
-import { MdKeyboardArrowLeft } from "react-icons/md";
+import { MdKeyboardArrowLeft, MdChevronRight } from "react-icons/md";
 
 import {
   CarouselItem,
@@ -32,9 +32,9 @@ export default function Categories() {
 
   if (isLoading) {
     return (
-      <div>
+      <>
         <LoadingSpinner />
-      </div>
+      </>
     );
   }
 
@@ -64,11 +64,11 @@ export default function Categories() {
         <button onClick={handlePrevPage} className="carousel-control prev">
           <MdKeyboardArrowLeft />
         </button>
-        <span>Page {currentPage}</span>
-        <button
-          onClick={handleNextPage}
-          className="carousel-control next"
-        ></button>
+
+        <span> {currentPage}</span>
+        <button onClick={handleNextPage} className="carousel-control next">
+          <MdChevronRight />
+        </button>
       </Card>
     </>
   );
@@ -80,19 +80,22 @@ const Card = styled.div`
   text-align: center;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 2rem;
 
   .carousel-control {
-    background-color: rgba(0, 0, 0, 0.5);
     color: #ffffff;
     border: none;
     font-size: 1.5rem;
     padding: 0.5rem 1rem;
-    /* background: #38add2; */
+    background-color: #38add2;
     border: none;
+    align-items: center;
     outline: none;
+    display: flex;
+    justify-content: center;
     border-radius: 100%;
-    height: 48px;
-    width: 48px;
+    height: 35px;
+    width: 35px;
     transition: 0.3s ease;
     cursor: pointer;
     @media (min-width: 768px) {
@@ -109,6 +112,16 @@ const Card = styled.div`
   .carousel-control.next {
     right: 1rem;
   }
+  /* span {
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+    margin: 0 2px;
+    background-color: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+    display: inline-block;
+  } */
 `;
 
 const Button = styled.button`

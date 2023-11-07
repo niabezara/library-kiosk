@@ -4,6 +4,7 @@ export const CarouselWrapper = styled.div`
   position: relative;
   overflow: hidden;
   width: 100%;
+  margin: 2rem;
 `;
 export const CarouselItems = styled.div`
   display: flex;
