@@ -5,7 +5,7 @@ import { useQuery } from "react-query";
 import fetchUsers from "../api/Login";
 import { Button, InputSection } from "../styles/GeneralStyles";
 import { HiUser } from "react-icons/hi";
-import { RiLockPasswordFill } from "react-icons/Ri";
+import { RiLockPasswordFill } from "react-icons/ri";
 import { Card } from "../styles/Auth";
 import { showErrorMessage } from "../utils/InformartionMessages";
 
