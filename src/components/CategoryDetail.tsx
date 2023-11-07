@@ -20,8 +20,14 @@ export default function CategoryDetail() {
     data: books,
     isLoading,
     isError,
-  } = useQuery(["books", currentPage], () =>
-    selectedCategory(currentPage, 7, categoryId)
+  } = useQuery(
+    ["books", currentPage],
+    () => selectedCategory(currentPage, 7, categoryId),
+    {
+      keepPreviousData: true,
+      staleTime: 300000,
+      cacheTime: 3600000,
+    }
   );
 
   if (isLoading) {

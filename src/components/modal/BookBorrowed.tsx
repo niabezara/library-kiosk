@@ -23,10 +23,9 @@ export default function BorrowModal({ open }: BorrowModalProps) {
 
         <h1>
           {matchingBooks.map((item: any, id: number) => (
-            <>
-              <div key={id}>{item}</div>
-              <p>{item.title}</p>
-            </>
+            <div key={id}>
+              <div>{item}</div>
+            </div>
           ))}
         </h1>
         <Link to="/" onClick={() => setBorrowModalOpen(false)}>
