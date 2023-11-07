@@ -5,26 +5,27 @@ import CategoriesPage from "./routes/CategoriesPage";
 import CategoryDetailPage from "./routes/CategoryDetailPage";
 import ToastNote from "./components/Toast";
 import NavBar from "./components/NavBar";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Theme from "./styles/Theme";
+import { Helmet } from "react-helmet";
+import FooterComponent from "./components/Footer";
 
 function App() {
   const [theme, setTheme] = useState("dark");
-  const [Loading, setLoading] = useState(false);
 
   function toggleTheme() {
     setTheme(theme === "light" ? "dark" : "light");
   }
-  useEffect(() => {
-    document.title = "Library Kiosk";
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-  }, []);
-
   return (
     <>
+      <Helmet>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
       <Theme theme={theme}>
         <GlobalStyle />
         <ToastNote />
@@ -34,6 +35,7 @@ function App() {
           <Route path="/categories" element={<CategoriesPage />} />
           <Route path="/category" element={<CategoryDetailPage />} />
         </Routes>
+        <FooterComponent />
       </Theme>
     </>
   );

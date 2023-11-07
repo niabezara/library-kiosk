@@ -1,24 +1,24 @@
-import { Div, Container, StyledFooter } from "../styles/Footer";
+import { Footer, StyledFooter } from "../styles/Footer";
 import { AiFillGithub } from "react-icons/ai";
 
-const Footer = () => {
+const FooterComponent = () => {
   return (
-    <Div>
+    <Footer>
       <StyledFooter>
         <p>
           Built with React, Framer Motion and Styled Components. Coded in VS
           Code.
         </p>
         <a
-          href="https://github.com/niabezara/new-portfolio"
+          href="https://github.com/niabezara/library-kiosk"
           target="_blank"
           rel="noreferrer"
         >
-          <AiFillGithub />
+          <AiFillGithub className="githubIcon" />
         </a>
       </StyledFooter>
-    </Div>
+    </Footer>
   );
 };
 
-export default Footer;
+export default FooterComponent;

@@ -1,5 +1,5 @@
-import React from "react";
-import { Div, Overlay } from "../../styles/RegistrationModalStyles.ts/Style";
+import React, { useEffect } from "react";
+import { Overlay, Modal } from "../../styles/GeneralStyles";
 import { UseLibrary } from "../../context/LibraryContext";
 import { Link } from "react-router-dom";
 
@@ -13,12 +13,20 @@ export default function BorrowModal({ open }: BorrowModalProps) {
 
   //NOte aq unda daimapos archeulebi
 
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
+    }
+  }, [open]);
+
   if (!open) return null;
   return (
     <>
       <Overlay />
-      <Div>
-        <h1>Borrow Confirmation</h1>
+      <Modal>
+        <h1 style={{ color: "black" }}>Borrow Confirmation</h1>
         <h1>Keep Your Book ID</h1>
 
         <h1>
@@ -31,7 +39,7 @@ export default function BorrowModal({ open }: BorrowModalProps) {
         <Link to="/" onClick={() => setBorrowModalOpen(false)}>
           <button>Back to home page</button>
         </Link>
-      </Div>
+      </Modal>
     </>
   );
 }

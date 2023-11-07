@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import ReactDom from "react-dom";
-import { Div, Overlay } from "../../styles/RegistrationModalStyles.ts/Style";
+import { Modal, Overlay } from "../../styles/GeneralStyles";
 
 interface LoginModalProps {
   open: boolean;
@@ -34,7 +34,7 @@ export default function LoginModal({
   return ReactDom.createPortal(
     <>
       <Overlay />
-      <Div ref={AuthRef}>{children}</Div>
+      <Modal ref={AuthRef}>{children}</Modal>
     </>,
     portalElement
   );

@@ -1,13 +1,13 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import { lightType, darkType } from "../interfaces/Types";
+import { lightType, darkType } from "../interfaces/ThemeTypes";
 
 const lightTheme: lightType = {
   backgroundColor: "#f5f5fd",
-  secondBackground: "#ffffff",
+  secondBackground: "#f5f5fd",
   borderColor: "#e7e3fa",
   navBackground: "rgba(245, 241, 241, 0.3)",
-  headerColor: "#181818",
+  headerColor: "#192655",
   textColor: "#696969",
   mainColor: "#8871e6",
   secondColor: "#dbd2ff",
@@ -19,10 +19,10 @@ const lightTheme: lightType = {
 
 const darkTheme: darkType = {
   backgroundColor: "#262A56",
-  secondBackground: "#121b31",
+  secondBackground: "#21254f",
   borderColor: "#0d1324",
   navBackground: "rgba(13, 25, 48, 0.3)",
-  headerColor: "#e0e7fd",
+  headerColor: "#FFFBF5",
   textColor: "#D0BFFF",
   mainColor: "#D0BFFF",
   secondColor: "#122B39",

@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { Button } from "../styles/GeneralStyles";
 
 interface Card {
   title: string;
@@ -14,7 +15,7 @@ const Card = ({ title, img, onClick }: Card) => {
       as={motion.div}
       whileHover={{ scale: 0.9, opacity: 1 }}
     >
-      <button>{title}</button>
+      <CardButton>{title}</CardButton>
       <img src={img} alt="" />
     </CardDiv>
   );
@@ -32,20 +33,15 @@ const CardDiv = styled.div`
   flex-direction: column-reverse;
   padding: 2rem;
 
-  button {
-    z-index: 10;
-    bottom: 0;
-    background-color: #610c9f;
-    color: rgb(255, 255, 255);
-    font-weight: 700;
-    font-size: 2.2rem;
-    padding: 2rem 3rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-  }
   img {
     z-index: 8;
     width: 100%;
   }
+`;
+const CardButton = styled(Button)`
+  z-index: 10;
+  bottom: 0;
+  font-weight: 700;
+  font-size: 2.2rem;
+  padding: 2rem 3rem;
 `;

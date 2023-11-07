@@ -11,7 +11,6 @@ interface LibraryContextProps {
   BorrowModalOpen: boolean;
   matchingBooks: any;
   setBorrowModalOpen: Dispatch<SetStateAction<boolean>>;
-  HandleReturnModal: () => void;
   returnModal: boolean;
   setReturnModal: Dispatch<SetStateAction<boolean>>;
   setMatchingBooks: Dispatch<SetStateAction<string[]>>;
@@ -36,10 +35,6 @@ export function LibraryProvider({ children }: { children: React.ReactNode }) {
     setBorrowModalOpen((prevOpenModal) => !prevOpenModal);
   };
 
-  const HandleReturnModal = () => {
-    setReturnModal(true);
-  };
-
   return (
     <LibraryContext.Provider
       value={{
@@ -49,7 +44,6 @@ export function LibraryProvider({ children }: { children: React.ReactNode }) {
         BorrowModalOpen,
         setBorrowModalOpen,
         setReturnModal,
-        HandleReturnModal,
         returnModal,
       }}
     >

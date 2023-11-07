@@ -12,7 +12,7 @@ export default createGlobalStyle`
     --color-border: ${(props) => props.theme.borderColor};
     --color-second: ${(props) => props.theme.secondColor};
     --color-gradient: ${(props) => props.theme.gradientColor};
-    --font-mono: "Roboto Mono", sans-serif;
+    --font-mono:'Poppins', sans-serif;
     --font-sans: 'Inter', sans-serif;
   }
 
@@ -30,10 +30,10 @@ export default createGlobalStyle`
 
   body {
    font-weight: 400;
-   font-family: var(--font-sans);
+   font-family: var(--font-mono);
     background-color: var(--color-bg);
     color: var(--color-header);
-  
+  min-height: 100vh;
 
 
  &::-webkit-scrollbar {

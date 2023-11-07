@@ -13,7 +13,7 @@ function ToastNote() {
       pauseOnFocusLoss
       draggable
       pauseOnHover
-      theme="light"
+      theme="dark"
     />
   );
 }

@@ -1,25 +1,27 @@
 import { useNavigate } from "react-router-dom";
 import Card from "./Card";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 import { UseLibrary } from "../context/LibraryContext";
 import { showInfoMessage } from "../utils/InformartionMessages";
 import ReturnModal from "./modal/ReturnBookModal";
+import { Container } from "../styles/GeneralStyles";
 
 export default function LandingCards() {
   const navigate = useNavigate();
-  const { matchingBooks, HandleReturnModal, returnModal } = UseLibrary();
+  const { matchingBooks, setReturnModal, returnModal } = UseLibrary();
 
+  // Return book
   const handleReturnBook = () => {
     if (matchingBooks.length === 0) {
       return showInfoMessage(
         "No books have been borrowed yet. Borrow a book to return."
       );
     } else {
-      HandleReturnModal();
+      setReturnModal(true);
     }
   };
 
+  // borrow book
   const handleBorrowBook = () => {
     navigate("/categories");
   };
@@ -43,19 +45,6 @@ export default function LandingCards() {
   );
 }
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 2rem;
-  align-items: center;
-  margin: 2rem;
-  h1 {
-    font-size: 3.6rem;
-    color: #610c9f;
-  }
-`;
-
 const Wrap = styled.div`
   display: flex;
   flex-direction: column;
@@ -66,6 +55,5 @@ const Wrap = styled.div`
     align-items: center;
     gap: 2rem;
     justify-content: center;
-    margin: 3rem;
   }
 `;
