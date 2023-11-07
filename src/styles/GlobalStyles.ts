@@ -29,10 +29,10 @@ export default createGlobalStyle`
   }
 
   body {
-   font-weight: 400;
-   font-family: var(--font-mono);
-    background-color: var(--color-bg);
-    color: var(--color-header);
+  font-weight: 400;
+  font-family: var(--font-mono);
+  background-color: var(--color-bg);
+  color: var(--color-header);
   min-height: 100vh;
 
 

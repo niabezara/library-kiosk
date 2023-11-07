@@ -81,4 +81,5 @@ export const Button = styled.button`
   color: rgb(255, 255, 255);
   border: none;
   border-radius: 8px;
+  padding: 1rem;
 `;

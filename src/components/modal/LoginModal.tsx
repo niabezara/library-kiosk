@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import ReactDom from "react-dom";
 import { Modal, Overlay } from "../../styles/GeneralStyles";
+import styled from "styled-components";
 
 interface LoginModalProps {
   open: boolean;
@@ -34,8 +35,10 @@ export default function LoginModal({
   return ReactDom.createPortal(
     <>
       <Overlay />
-      <Modal ref={AuthRef}>{children}</Modal>
+      <LogModal ref={AuthRef}>{children}</LogModal>
     </>,
     portalElement
   );
 }
+
+const LogModal = styled(Modal)``;

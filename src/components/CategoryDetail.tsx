@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import Modal from "./modal/LoginModal";
 import BorrowModal from "./modal/BookBorrowed";
-import Register from "./Authentication";
+import Register from "./Auth";
 import { UseLibrary } from "../context/LibraryContext";
 
 export default function CategoryDetail() {
