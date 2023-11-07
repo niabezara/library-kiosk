@@ -18,7 +18,7 @@ const lightTheme: lightType = {
 };
 
 const darkTheme: darkType = {
-  backgroundColor: "#262A56",
+  backgroundColor: "#192655",
   secondBackground: "#21254f",
   borderColor: "#0d1324",
   navBackground: "rgba(13, 25, 48, 0.3)",

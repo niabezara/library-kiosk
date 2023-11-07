@@ -43,10 +43,9 @@ export default function Categories() {
   return (
     <>
       <Card>
+        <h1>Select Category</h1>
         <CarouselWrapper>
-          <CarouselItems
-            className="carousel-items"
-          >
+          <CarouselItems className="carousel-items">
             {categories?.map((category) => (
               <CarouselItem key={category.id}>
                 <Link to={`/category/?categoryId=${category.title}`}>
@@ -77,6 +76,7 @@ const Card = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
+  /* min-height: 100vh; */
 
   .carousel-control {
     color: #ffffff;

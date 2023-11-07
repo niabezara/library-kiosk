@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { Container } from "../styles/GeneralStyles";
 
 export default function PageHeader() {
   return (
@@ -15,12 +16,11 @@ export default function PageHeader() {
   );
 }
 
-const Head = styled.div`
-  background-color: white;
-  padding: 3.2rem;
+const Head = styled(Container)`
+  display: flex;
+  flex-direction: column;
   text-align: center;
   width: 100%;
-  color: blue;
   font-size: 15px;
   font-weight: 700;
   position: relative;
@@ -28,10 +28,10 @@ const Head = styled.div`
   z-index: -10;
   text-transform: uppercase;
 
-  &:after {
+  &:before {
     content: "";
     position: absolute;
-    bottom: 0;
+    top: 0;
     width: 100%;
     left: 0;
     opacity: 1.5;
@@ -39,14 +39,12 @@ const Head = styled.div`
     background-color: #e3e3e3;
   }
 
-  h1 {
-    color: #6096b4;
-  }
+  h1,
   h2 {
-    color: #6096b4;
+    color: var(--color-main);
   }
 
   @media screen and (min-width: 900px) {
-    padding: 6.7rem;
+    padding: 3.7rem;
   }
 `;
