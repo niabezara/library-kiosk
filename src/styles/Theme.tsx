@@ -26,7 +26,7 @@ const darkTheme: darkType = {
   textColor: "#D0BFFF",
   mainColor: "#D0BFFF",
   secondColor: "#122B39",
-  gradientColor: "linear-gradient(45deg, #132043, #48c2b0)",
+  gradientColor: "linear-gradient(45deg, #330b61, #8846a9)",
   boxShadow: "8px 8px 18px #0F172A, -8px -8px 18px #0F172A",
   keyword: "#326cb8",
   className: "#389d89",

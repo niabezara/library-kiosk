@@ -83,3 +83,22 @@ export const Button = styled.button`
   border-radius: 8px;
   padding: 1rem;
 `;
+
+export const Title = styled.h1`
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: var(--color-border);
+`;
+
+export const Keep = styled.h3`
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--color-border);
+`;
+
+export const Id = styled.li`
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: var(--color-border);
+  margin: 2rem 0 2rem 0;
+`;

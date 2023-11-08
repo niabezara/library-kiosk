@@ -14,7 +14,6 @@ const StyledHero = styled(Container)`
   position: relative;
   max-width: none;
   min-height: 100vh;
-  /* background-color: #579bb1; */
   h2 {
     font-size: 1.2rem;
     font-weight: lighter;

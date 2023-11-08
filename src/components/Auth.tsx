@@ -1,5 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { IFormInput } from "../interfaces/registrationTypes";
+import { IFormInput } from "../interfaces/AuthTypes";
 import { useAuth } from "../context/AuthContext";
 import { useQuery } from "react-query";
 import fetchUsers from "../api/Login";

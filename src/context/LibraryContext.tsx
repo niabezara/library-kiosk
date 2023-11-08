@@ -1,20 +1,5 @@
-import {
-  Dispatch,
-  SetStateAction,
-  createContext,
-  useContext,
-  useState,
-} from "react";
-
-interface LibraryContextProps {
-  selectItem: (itemId: string) => void;
-  BorrowModalOpen: boolean;
-  matchingBooks: any;
-  setBorrowModalOpen: Dispatch<SetStateAction<boolean>>;
-  returnModal: boolean;
-  setReturnModal: Dispatch<SetStateAction<boolean>>;
-  setMatchingBooks: Dispatch<SetStateAction<string[]>>;
-}
+import { createContext, useContext, useState } from "react";
+import { LibraryContextProps } from "../interfaces/Library";
 
 const LibraryContext = createContext<LibraryContextProps>(
   {} as LibraryContextProps
@@ -30,7 +15,6 @@ export function LibraryProvider({ children }: { children: React.ReactNode }) {
   const [returnModal, setReturnModal] = useState(false);
 
   const selectItem = (itemId: string) => {
-    console.log("item_id", itemId);
     setMatchingBooks((prevMatchingBooks) => [...prevMatchingBooks, itemId]);
     setBorrowModalOpen((prevOpenModal) => !prevOpenModal);
   };

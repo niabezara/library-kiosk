@@ -71,13 +71,21 @@ export default function Categories() {
 
 const Card = styled.div`
   display: flex;
+
   align-items: center;
   text-align: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
-  /* min-height: 100vh; */
+  gap: 4rem;
+  margin: 2rem;
+  @media (min-width: 1024px) {
+    flex-direction: column;
+  }
 
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
   .carousel-control {
     color: #ffffff;
     border: none;
@@ -94,19 +102,25 @@ const Card = styled.div`
     width: 35px;
     transition: 0.3s ease;
     cursor: pointer;
-    @media (min-width: 768px) {
+    @media (min-width: 700px) {
       position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      /* top: 50%;
+      transform: translateY(-50%); */
     }
   }
 
   .carousel-control.prev {
     left: 1rem;
+    @media (min-width: 1024px) {
+      left: 19rem;
+    }
   }
 
   .carousel-control.next {
     right: 1rem;
+    @media (min-width: 1024px) {
+      right: 19rem;
+    }
   }
   /* span {
     cursor: pointer;
@@ -122,10 +136,8 @@ const Card = styled.div`
 
 const Button = styled.button`
   background-color: transparent;
-  color: #006595;
-  border: 1px solid #006595;
-  font-family: "LinetoBrown", "Helvetica Neue", Helvetica, Arial, Verdana,
-    sans-serif;
+  color: var(--color-header);
+  border: 1px solid var(--color-header);
   font-size: 1.3rem;
   display: inline-block;
   position: relative;

@@ -1,19 +1,5 @@
-import {
-  Dispatch,
-  SetStateAction,
-  createContext,
-  useContext,
-  useState,
-} from "react";
-
-interface AuthContextProps {
-  setOpenModal: Dispatch<SetStateAction<boolean>>;
-  openRegistration: () => void;
-  openModal: boolean;
-  closeCart: () => void;
-  session: boolean;
-  setSession: Dispatch<SetStateAction<boolean>>;
-}
+import { createContext, useContext, useState } from "react";
+import { AuthContextProps } from "../interfaces/AuthTypes";
 
 const AuthContext = createContext<AuthContextProps>({} as AuthContextProps);
 
