@@ -32,7 +32,7 @@ const CardDiv = styled.div`
   border-radius: 2rem;
   flex-direction: column-reverse;
   padding: 2rem;
-
+  cursor: pointer;
   img {
     z-index: 8;
     width: 100%;
@@ -44,4 +44,6 @@ const CardButton = styled(Button)`
   font-weight: 700;
   font-size: 2.2rem;
   padding: 2rem 3rem;
+  padding: 2rem;
+  cursor: pointer;
 `;

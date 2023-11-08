@@ -12,7 +12,7 @@ export default function LoadingSpinner() {
         // background: "#F8F6F4",
       }}
     >
-      <DotLoader color="#38ADD2" />
+      <DotLoader color="#66347F" />
     </div>
   );
 }

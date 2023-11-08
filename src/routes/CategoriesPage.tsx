@@ -36,7 +36,7 @@ const Container = styled.div`
     overflow-x: hidden;
     z-index: -20;
   }
-  @media screen and (min-width: 700px) {
-    /* left: -19.6rem; */
+  @media screen and (min-width: 1024px) {
+    gap: 10.5rem;
   }
 `;

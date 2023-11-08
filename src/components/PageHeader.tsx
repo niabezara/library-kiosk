@@ -7,7 +7,7 @@ export default function PageHeader() {
     <Head
       initial={{ y: -250 }}
       animate={{ y: 0 }}
-      transition={{ delay: 0.2, type: "spring", stiffness: 10 }}
+      transition={{ delay: 0.1, type: "spring", stiffness: 20 }}
       as={motion.div}
     >
       <h1>Explore collection</h1>

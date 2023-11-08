@@ -31,12 +31,12 @@ export default function LandingCards() {
       <Wrap>
         <Card
           title={"Borrow Book"}
-          img="./assets/borrow-book.jpg"
+          img="./assets/book.png"
           onClick={handleBorrowBook}
         />
         <Card
           title={"Return Book"}
-          img="./assets/return-book.jpg"
+          img="./assets/return.png"
           onClick={handleReturnBook}
         />
       </Wrap>
