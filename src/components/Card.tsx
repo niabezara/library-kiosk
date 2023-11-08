@@ -31,7 +31,7 @@ const CardDiv = styled.div`
   border: 1px solid rgb(219, 219, 232);
   border-radius: 2rem;
   flex-direction: column-reverse;
-  padding: 2rem;
+  padding: 5rem;
   cursor: pointer;
   img {
     z-index: 8;

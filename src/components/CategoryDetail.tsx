@@ -138,4 +138,7 @@ const Wrapper = styled.div`
     max-height: 300px;
     object-fit: cover;
   }
+  .info {
+    padding: 2rem;
+  }
 `;
