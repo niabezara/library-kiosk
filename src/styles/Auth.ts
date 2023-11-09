@@ -10,7 +10,7 @@ export const Card = styled.div`
     justify-content: center;
   }
   label {
-    color: black;
+    color: var(--color-border);
     font-size: 1.3rem;
     font-weight: 300;
   }

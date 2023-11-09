@@ -72,14 +72,14 @@ export default function CategoryDetail() {
             <SelectButton />
             <div className="info">
               <Rating rating={book.volumeInfo.averageRating} />
-              {book.volumeInfo.title && <h1>{book.volumeInfo.title}</h1>}
+              {book.volumeInfo.title && <h2>{book.volumeInfo.title}</h2>}
 
               {book.volumeInfo.authors && (
-                <h1>
+                <p>
                   {book.volumeInfo.authors.length > 4
-                    ? book.volumeInfo.authors.slice(0, 1) + "..."
-                    : book.volumeInfo.authors}
-                </h1>
+                    ? book.volumeInfo.authors.slice(0, 4).join(", ") + "..."
+                    : book.volumeInfo.authors.join(", ")}
+                </p>
               )}
             </div>
           </Wrapper>

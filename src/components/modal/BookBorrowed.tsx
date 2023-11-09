@@ -7,6 +7,7 @@ import {
   Keep,
   Id,
   Box,
+  Read,
 } from "../../styles/GeneralStyles";
 import { UseLibrary } from "../../context/LibraryContext";
 import { Link } from "react-router-dom";
@@ -38,6 +39,7 @@ export default function BorrowModal({ open }: BorrowModalProps) {
             </Box>
           )
         )}
+        <Read>Happy Reading!</Read>
         <Link to="/" onClick={() => setBorrowModalOpen(false)}>
           <Button>Back to home page</Button>
         </Link>

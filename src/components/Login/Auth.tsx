@@ -7,7 +7,10 @@ import { Button, InputSection } from "../../styles/GeneralStyles";
 import { HiUser } from "react-icons/hi";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { Card } from "../../styles/Auth";
-import { showErrorMessage } from "../../utils/InformartionMessages";
+import {
+  showErrorMessage,
+  showSuccessMessage,
+} from "../../utils/InformartionMessages";
 
 export default function Register() {
   const { register, handleSubmit } = useForm<IFormInput>();
@@ -21,6 +24,9 @@ export default function Register() {
         localStorage.setItem("token", users);
         setSession(true);
         closeCart();
+        showSuccessMessage(
+          "Congratulations! You have successfully authorized in the kiosk library"
+        );
       } else {
         //error message for the username
         if (data.userName !== users.name) {

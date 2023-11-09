@@ -63,5 +63,11 @@ export const Wrapper = styled.div`
   }
   .info {
     padding: 2rem;
+    h2 {
+      font-size: 2.2rem;
+    }
+    p {
+      font-size: 1.3rem;
+    }
   }
 `;

@@ -107,6 +107,9 @@ export const Keep = styled.h3`
   font-weight: 400;
   color: var(--color-border);
 `;
+export const Read = styled(Keep)`
+  margin-bottom: 2rem;
+`;
 
 export const Id = styled.li`
   font-size: 1.2rem;
