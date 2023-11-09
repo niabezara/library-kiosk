@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import Card from "./Card";
 import styled from "styled-components";
-import { UseLibrary } from "../context/LibraryContext";
-import { showInfoMessage } from "../utils/InformartionMessages";
-import ReturnModal from "./modal/ReturnBookModal";
-import { Container } from "../styles/GeneralStyles";
-import borrowBook from "../assets/book.png";
-import returnBook from "../assets/return.png";
+import { UseLibrary } from "../../context/LibraryContext";
+import { showInfoMessage } from "../../utils/InformartionMessages";
+import ReturnModal from "../modal/ReturnBookModal";
+import { Container } from "../../styles/GeneralStyles";
+import borrowBook from "../../assets/book.png";
+import returnBook from "../../assets/return.png";
 
 export default function LandingCards() {
   const navigate = useNavigate();

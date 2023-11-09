@@ -1,7 +1,7 @@
 import { BsSun, BsMoon } from "react-icons/bs";
 import { Link } from "react-router-dom";
-import bookshelfImage from "../assets/bookshelf.png";
-import { Container, Label, Logo, StyledNav } from "../styles/NavBar";
+import bookshelfImage from "../../assets/bookshelf.png";
+import { Container, Label, Logo, StyledNav } from "../../styles/NavBar";
 
 const Nav = ({ toggleTheme, theme }: any) => {
   return (

@@ -1,4 +1,4 @@
-import { Footer, StyledFooter } from "../styles/Footer";
+import { Footer, StyledFooter } from "../../styles/Footer";
 import { AiFillGithub } from "react-icons/ai";
 
 const FooterComponent = () => {

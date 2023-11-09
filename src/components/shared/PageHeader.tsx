@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { Container } from "../styles/GeneralStyles";
+import { Container } from "../../styles/GeneralStyles";
 
 export default function PageHeader() {
   return (

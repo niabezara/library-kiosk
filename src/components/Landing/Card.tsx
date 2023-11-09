@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { Button } from "../styles/GeneralStyles";
+import { Button } from "../../styles/GeneralStyles";
 
 interface Card {
   title: string;

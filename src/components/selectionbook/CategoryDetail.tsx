@@ -1,18 +1,18 @@
-import { selectedCategory } from "../api/books";
+import { selectedCategory } from "../../api/books";
 import { useQuery } from "react-query";
-import { UsePagination } from "../context/PaginationContext";
+import { UsePagination } from "../../context/PaginationContext";
 import { useLocation } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
-import Modal from "./modal/LoginModal";
-import BorrowModal from "./modal/BookBorrowed";
-import Register from "./Auth";
-import { UseLibrary } from "../context/LibraryContext";
+import { useAuth } from "../../context/AuthContext";
+import Modal from "../modal/LoginModal";
+import BorrowModal from "../modal/BookBorrowed";
+import Register from "../Login/Auth";
+import { UseLibrary } from "../../context/LibraryContext";
 import Rating from "./Rating";
 import { MdKeyboardArrowLeft, MdChevronRight } from "react-icons/md";
-import LoadingSpinner from "../utils/Spinner";
-import { Card, Containerdiv, Wrapper } from "../styles/CategoryDetail";
+import LoadingSpinner from "../../utils/Spinner";
+import { Card, Containerdiv, Wrapper } from "../../styles/CategoryDetail";
 import { SelectButton } from "./SelectButton";
-import Error from "../utils/Error";
+import Error from "../../utils/Error";
 
 export default function CategoryDetail() {
   const location = useLocation();
@@ -61,7 +61,7 @@ export default function CategoryDetail() {
           <Wrapper
             key={book.id}
             onClick={() => {
-              selectItem(book.id);
+              selectItem(book.id, book.volumeInfo.title);
               openRegistration();
             }}
           >

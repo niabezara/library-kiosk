@@ -84,6 +84,18 @@ export const Button = styled.button`
   padding: 1rem;
 `;
 
+export const Box = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 2rem 0 2rem 0;
+  .booktitle {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--color-border);
+  }
+`;
+
 export const Title = styled.h1`
   font-size: 2.2rem;
   font-weight: 500;
@@ -100,5 +112,4 @@ export const Id = styled.li`
   font-size: 1.2rem;
   font-weight: 300;
   color: var(--color-border);
-  margin: 2rem 0 2rem 0;
 `;

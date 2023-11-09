@@ -3,12 +3,12 @@ import GlobalStyle from "./styles/GlobalStyles";
 import HomePage from "./routes/HomePage";
 import CategoriesPage from "./routes/CategoriesPage";
 import CategoryDetailPage from "./routes/CategoryDetailPage";
-import ToastNote from "./components/Toast";
-import NavBar from "./components/NavBar";
+import ToastNote from "./components/shared/Toast";
+import NavBar from "./components/shared/NavBar";
 import { useEffect, useState } from "react";
 import Theme from "./styles/Theme";
 import { Helmet } from "react-helmet";
-import FooterComponent from "./components/Footer";
+import FooterComponent from "./components/shared/Footer";
 import animationdata from "./assets/Animation.json";
 import Lottie from "lottie-react";
 

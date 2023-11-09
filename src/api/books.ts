@@ -10,7 +10,6 @@ export const getCategories = async (page: number, maxResults: number) => {
   );
 
   const uniqueCategories = new Set<string>();
-  console.log("rame", data);
   const categories: BookCategory[] = data.items.reduce(
     (acc: BookCategory[], item) => {
       const category = item.volumeInfo.categories?.[0];

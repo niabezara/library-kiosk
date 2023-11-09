@@ -1,15 +1,16 @@
 import { useQuery } from "react-query";
-import { getCategories } from "../api/books";
-import { UsePagination } from "../context/PaginationContext";
+import { getCategories } from "../../api/books";
+import { UsePagination } from "../../context/PaginationContext";
 import { Link } from "react-router-dom";
-import LoadingSpinner from "../utils/Spinner";
+import LoadingSpinner from "../../utils/Spinner";
 import { MdKeyboardArrowLeft, MdChevronRight } from "react-icons/md";
 import {
   CarouselItem,
   CarouselItems,
   CarouselWrapper,
-} from "../styles/Carousel";
-import { Button, Card } from "../styles/Categories";
+} from "../../styles/Carousel";
+import { Button, Card } from "../../styles/Categories";
+import Error from "../../utils/Error";
 
 export default function Categories() {
   const { currentPage, handlePrevPage, handleNextPage } = UsePagination();
@@ -36,7 +37,11 @@ export default function Categories() {
   }
 
   if (isError) {
-    return <div>Error fetching data</div>;
+    return (
+      <>
+        <Error />
+      </>
+    );
   }
 
   return (

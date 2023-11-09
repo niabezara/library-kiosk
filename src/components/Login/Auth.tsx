@@ -1,13 +1,13 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { IFormInput } from "../interfaces/AuthTypes";
-import { useAuth } from "../context/AuthContext";
+import { IFormInput } from "../../interfaces/AuthTypes";
+import { useAuth } from "../../context/AuthContext";
 import { useQuery } from "react-query";
-import fetchUsers from "../api/Login";
-import { Button, InputSection } from "../styles/GeneralStyles";
+import fetchUsers from "../../api/Login";
+import { Button, InputSection } from "../../styles/GeneralStyles";
 import { HiUser } from "react-icons/hi";
 import { RiLockPasswordFill } from "react-icons/ri";
-import { Card } from "../styles/Auth";
-import { showErrorMessage } from "../utils/InformartionMessages";
+import { Card } from "../../styles/Auth";
+import { showErrorMessage } from "../../utils/InformartionMessages";
 
 export default function Register() {
   const { register, handleSubmit } = useForm<IFormInput>();

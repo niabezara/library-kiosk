@@ -1,4 +1,4 @@
-import LandingCards from "../components/LandingCards";
+import LandingCards from "../components/Landing/LandingCards";
 import { Container } from "../styles/GeneralStyles";
 import styled from "styled-components";
 

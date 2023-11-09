@@ -11,11 +11,16 @@ export function UseLibrary() {
 
 export function LibraryProvider({ children }: { children: React.ReactNode }) {
   const [BorrowModalOpen, setBorrowModalOpen] = useState(false);
-  const [matchingBooks, setMatchingBooks] = useState<string[]>([]);
+  const [matchingBooks, setMatchingBooks] = useState<
+    { itemId: string; title: string }[]
+  >([]);
   const [returnModal, setReturnModal] = useState(false);
 
-  const selectItem = (itemId: string) => {
-    setMatchingBooks((prevMatchingBooks) => [...prevMatchingBooks, itemId]);
+  const selectItem = (itemId: string, title: string) => {
+    setMatchingBooks((prevMatchingBooks) => [
+      ...prevMatchingBooks,
+      { itemId, title },
+    ]);
     setBorrowModalOpen((prevOpenModal) => !prevOpenModal);
   };
 

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Selected from "../components/CategoryDetail";
+import Selected from "../components/selectionbook/CategoryDetail";
 import { Container } from "../styles/GeneralStyles";
 
 export default function CategoryDetail() {
