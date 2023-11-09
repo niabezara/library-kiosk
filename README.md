@@ -2,6 +2,7 @@
 
 Library Kiosk is a React and TypeScript-based web application, aiming to simplify the book borrowing and return process.
 The user interface is intentionally kept simple for a straightforward user experience.
+Live Link https://master--snazzy-creponne-af54df.netlify.app/
 
 ## Technologies Used
 
