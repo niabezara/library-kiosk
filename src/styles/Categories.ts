@@ -18,7 +18,7 @@ export const Card = styled.div`
   }
 
   h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 700;
   }
   .page {

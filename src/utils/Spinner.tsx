@@ -1,4 +1,4 @@
-import { DotLoader } from "react-spinners";
+import { ClipLoader } from "react-spinners";
 
 export default function LoadingSpinner() {
   return (
@@ -7,12 +7,10 @@ export default function LoadingSpinner() {
       style={{
         display: "flex",
         justifyContent: "center",
-        // minHeight: "100vh",
         alignItems: "center",
-        // background: "#F8F6F4",
       }}
     >
-      <DotLoader color="#38ADD2" />
+      <ClipLoader color="#38ADD2" />
     </div>
   );
 }

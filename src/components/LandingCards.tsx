@@ -5,6 +5,8 @@ import { UseLibrary } from "../context/LibraryContext";
 import { showInfoMessage } from "../utils/InformartionMessages";
 import ReturnModal from "./modal/ReturnBookModal";
 import { Container } from "../styles/GeneralStyles";
+import borrowBook from "../assets/book.png";
+import returnBook from "../assets/return.png";
 
 export default function LandingCards() {
   const navigate = useNavigate();
@@ -31,12 +33,12 @@ export default function LandingCards() {
       <Wrap>
         <Card
           title={"Borrow Book"}
-          img="./assets/book.png"
+          img={borrowBook}
           onClick={handleBorrowBook}
         />
         <Card
           title={"Return Book"}
-          img="./assets/return.png"
+          img={returnBook}
           onClick={handleReturnBook}
         />
       </Wrap>

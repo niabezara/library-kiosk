@@ -7,9 +7,12 @@ import Modal from "./modal/LoginModal";
 import BorrowModal from "./modal/BookBorrowed";
 import Register from "./Auth";
 import { UseLibrary } from "../context/LibraryContext";
-import styled from "styled-components";
-import { Container } from "../styles/GeneralStyles";
 import Rating from "./Rating";
+import { MdKeyboardArrowLeft, MdChevronRight } from "react-icons/md";
+import LoadingSpinner from "../utils/Spinner";
+import { Card, Containerdiv, Wrapper } from "../styles/CategoryDetail";
+import { SelectButton } from "./SelectButton";
+import Error from "../utils/Error";
 
 export default function CategoryDetail() {
   const location = useLocation();
@@ -34,11 +37,19 @@ export default function CategoryDetail() {
   );
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <>
+        <LoadingSpinner />
+      </>
+    );
   }
 
   if (isError) {
-    return <div>Error fetching data</div>;
+    return (
+      <>
+        <Error />
+      </>
+    );
   }
 
   return (
@@ -58,6 +69,7 @@ export default function CategoryDetail() {
               book.volumeInfo.imageLinks.thumbnail && (
                 <img src={book.volumeInfo.imageLinks.thumbnail} alt="" />
               )}
+            <SelectButton />
             <div className="info">
               <Rating rating={book.volumeInfo.averageRating} />
               {book.volumeInfo.title && <h1>{book.volumeInfo.title}</h1>}
@@ -75,9 +87,13 @@ export default function CategoryDetail() {
       </Card>
       {/* pagination */}
       <div>
-        <button onClick={handlePrevPage}>Previous Page</button>
-        <span>{seletedpage}</span>
-        <button onClick={handleNextPage}>Next Page</button>
+        <button onClick={handlePrevPage} className="carousel-control prev">
+          <MdKeyboardArrowLeft />
+        </button>
+        <span className="page">{seletedpage}</span>
+        <button onClick={handleNextPage} className="carousel-control next">
+          <MdChevronRight />
+        </button>
       </div>
       {/* modals */}
       {localStorage.getItem("token") ? (
@@ -94,51 +110,3 @@ export default function CategoryDetail() {
     </Containerdiv>
   );
 }
-
-const Containerdiv = styled(Container)`
-  flex-direction: column;
-  gap: 20px;
-  /* align-items: stretch;
-  justify-content: flex-start;
-  gap: 50px 0px; */
-  @media screen and (min-width: 700px) {
-    margin: 3rem;
-  }
-`;
-
-const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  gap: 20px;
-  /* flex-flow: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-   */
-
-  @media screen and (min-width: 400px) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media screen and (min-width: 700px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-`;
-
-const Wrapper = styled.div`
-  border: 2px solid rgb(219, 219, 232);
-  border-radius: 15px;
-  transition: all 0.25s ease-in-out 0s;
-  /* width: 23%; */
-  cursor: pointer;
-  img {
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-  }
-  .info {
-    padding: 2rem;
-  }
-`;

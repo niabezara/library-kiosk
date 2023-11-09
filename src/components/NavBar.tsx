@@ -1,5 +1,6 @@
 import { BsSun, BsMoon } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import bookshelfImage from "../assets/bookshelf.png";
 import { Container, Label, Logo, StyledNav } from "../styles/NavBar";
 
 const Nav = ({ toggleTheme, theme }: any) => {
@@ -12,7 +13,7 @@ const Nav = ({ toggleTheme, theme }: any) => {
       <StyledNav initial="hidden" animate="show">
         <Link to="/" style={{ textDecoration: "none" }}>
           <Logo>
-            <img src="/assets/bookshelf.png" alt="" />
+            <img src={bookshelfImage} alt="Bookshelf" />
             <h1>Library Kiosk</h1>
           </Logo>
         </Link>

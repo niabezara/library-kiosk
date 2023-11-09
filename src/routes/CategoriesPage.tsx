@@ -20,7 +20,7 @@ const Container = styled.div`
   position: relative;
   overflow-x: hidden;
   &::after {
-    content: url("/assets/top-blob.svg");
+    content: url("/top-blob.svg");
     position: absolute;
     bottom: 0px;
     left: -30.4rem;
@@ -29,7 +29,7 @@ const Container = styled.div`
   }
 
   &::before {
-    content: url("/assets/top-blob.svg");
+    content: url("/top-blob.svg");
     position: absolute;
     top: 0;
     right: -40.4rem;

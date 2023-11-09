@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import Theme from "./styles/Theme";
 import { Helmet } from "react-helmet";
 import FooterComponent from "./components/Footer";
-import animationdata from "../public/assets/Animation.json";
+import animationdata from "./assets/Animation.json";
 import Lottie from "lottie-react";
 
 function App() {
@@ -40,6 +40,7 @@ function App() {
       </Helmet>
       <Theme theme={theme}>
         <GlobalStyle />
+
         {isLoading ? (
           <Lottie animationData={animationdata} style={style} />
         ) : (

@@ -27,7 +27,7 @@ export default function BorrowModal({ open }: BorrowModalProps) {
         <Keep>Keep Your Book ID</Keep>
         {matchingBooks.map((item: any, id: number) => (
           <div key={id}>
-            <Id>{item}✨</Id>
+            <Id>{item}</Id>
           </div>
         ))}
         <Link to="/" onClick={() => setBorrowModalOpen(false)}>
