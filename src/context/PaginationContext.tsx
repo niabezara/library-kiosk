@@ -17,16 +17,23 @@ export function PaginationProvider({
   const [currentPage, setCurrentPage] = useState(1);
   const [seletedpage, setSelectedPage] = useState(1);
 
+  // for categories
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);
-    setSelectedPage(seletedpage + 1);
   };
-
+  // for categories
   const handlePrevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
-      setSelectedPage(seletedpage - 1);
     }
+  };
+  // for books selection page
+  const HandleBookPageNext = () => {
+    setSelectedPage(seletedpage + 1);
+  };
+  // for books selection page
+  const HandleBookPagePrev = () => {
+    setSelectedPage(seletedpage - 1);
   };
 
   return (
@@ -35,6 +42,8 @@ export function PaginationProvider({
         currentPage,
         handleNextPage,
         handlePrevPage,
+        HandleBookPagePrev,
+        HandleBookPageNext,
         seletedpage,
       }}
     >

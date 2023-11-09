@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 import bookshelfImage from "../../assets/bookshelf.png";
 import { Container, Label, Logo, StyledNav } from "../../styles/NavBar";
 
-const Nav = ({ toggleTheme, theme }: any) => {
+const Nav = ({
+  toggleTheme,
+  theme,
+}: {
+  toggleTheme: () => void;
+  theme: string;
+}) => {
   return (
     <Container
       initial={{ y: -250 }}

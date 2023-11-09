@@ -6,7 +6,7 @@ const fetchUsers = async () => {
       "https://jsonplaceholder.typicode.com/users/1"
     );
     const data = response.data;
-    data.password = "idontknow";
+    data.password = "kioskbook";
     return data;
   } catch (error) {
     console.error("Error fetching users:", error);

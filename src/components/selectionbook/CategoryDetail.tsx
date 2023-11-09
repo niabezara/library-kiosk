@@ -18,7 +18,8 @@ export default function CategoryDetail() {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const categoryId = searchParams.get("categoryId");
-  const { seletedpage, handlePrevPage, handleNextPage } = UsePagination();
+  const { seletedpage, HandleBookPagePrev, HandleBookPageNext } =
+    UsePagination();
   const { openRegistration, openModal, setOpenModal } = useAuth();
   const { BorrowModalOpen, selectItem } = UseLibrary();
 
@@ -57,7 +58,11 @@ export default function CategoryDetail() {
               >
                 {book.volumeInfo.imageLinks &&
                   book.volumeInfo.imageLinks.thumbnail && (
-                    <img src={book.volumeInfo.imageLinks.thumbnail} alt="" />
+                    <img
+                      src={book.volumeInfo.imageLinks.thumbnail}
+                      alt=""
+                      loading="lazy"
+                    />
                   )}
                 <SelectButton />
                 <div className="info">
@@ -77,11 +82,17 @@ export default function CategoryDetail() {
           </Card>
           {/* pagination */}
           <div>
-            <button onClick={handlePrevPage} className="carousel-control prev">
+            <button
+              onClick={HandleBookPagePrev}
+              className="carousel-control prev"
+            >
               <MdKeyboardArrowLeft />
             </button>
             <span className="page">{seletedpage}</span>
-            <button onClick={handleNextPage} className="carousel-control next">
+            <button
+              onClick={HandleBookPageNext}
+              className="carousel-control next"
+            >
               <MdChevronRight />
             </button>
           </div>

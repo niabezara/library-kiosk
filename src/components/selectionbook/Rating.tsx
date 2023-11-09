@@ -11,12 +11,12 @@ const Rating = ({ rating }: RatingProps) => {
 
     // Loop for star elements
     for (let i = 1; i <= 5; i++) {
-      if (i <= rating) {
-        stars.push(<BiSolidStar key={i} className="emptyStar" />);
-      } else if (i - 0.5 <= rating) {
+      if (i <= Math.floor(rating)) {
+        stars.push(<BiStar key={i} className="fullStar" />);
+      } else if (i - 0.5 === Math.floor(rating)) {
         stars.push(<BiSolidStarHalf key={i} className="HalfStar" />);
       } else {
-        stars.push(<BiStar key={i} className="fullStar" />);
+        stars.push(<BiSolidStar key={i} className="emptyStar" />);
       }
     }
 
