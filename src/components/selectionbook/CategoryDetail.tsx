@@ -36,76 +36,68 @@ export default function CategoryDetail() {
     }
   );
 
-  if (isLoading) {
-    return (
-      <>
-        <LoadingSpinner />
-      </>
-    );
-  }
-
-  if (isError) {
-    return (
-      <>
-        <Error />
-      </>
-    );
-  }
-
   return (
     <Containerdiv>
-      <h1>Select the Book</h1>
-      {/* books */}
-      <Card>
-        {books?.map((book) => (
-          <Wrapper
-            key={book.id}
-            onClick={() => {
-              selectItem(book.id, book.volumeInfo.title);
-              openRegistration();
-            }}
-          >
-            {book.volumeInfo.imageLinks &&
-              book.volumeInfo.imageLinks.thumbnail && (
-                <img src={book.volumeInfo.imageLinks.thumbnail} alt="" />
-              )}
-            <SelectButton />
-            <div className="info">
-              <Rating rating={book.volumeInfo.averageRating} />
-              {book.volumeInfo.title && <h2>{book.volumeInfo.title}</h2>}
-
-              {book.volumeInfo.authors && (
-                <p>
-                  {book.volumeInfo.authors.length > 4
-                    ? book.volumeInfo.authors.slice(0, 4).join(", ") + "..."
-                    : book.volumeInfo.authors.join(", ")}
-                </p>
-              )}
-            </div>
-          </Wrapper>
-        ))}
-      </Card>
-      {/* pagination */}
-      <div>
-        <button onClick={handlePrevPage} className="carousel-control prev">
-          <MdKeyboardArrowLeft />
-        </button>
-        <span className="page">{seletedpage}</span>
-        <button onClick={handleNextPage} className="carousel-control next">
-          <MdChevronRight />
-        </button>
-      </div>
-      {/* modals */}
-      {localStorage.getItem("token") ? (
+      {isLoading ? (
+        <LoadingSpinner />
+      ) : isError ? (
+        <Error />
+      ) : (
         <>
-          {BorrowModalOpen && (
-            <BorrowModal open={BorrowModalOpen} children={undefined} />
+          <h1>Select the Book</h1>
+          {/* books */}
+          <Card>
+            {books?.map((book) => (
+              <Wrapper
+                key={book.id}
+                onClick={() => {
+                  selectItem(book.id, book.volumeInfo.title);
+                  openRegistration();
+                }}
+              >
+                {book.volumeInfo.imageLinks &&
+                  book.volumeInfo.imageLinks.thumbnail && (
+                    <img src={book.volumeInfo.imageLinks.thumbnail} alt="" />
+                  )}
+                <SelectButton />
+                <div className="info">
+                  <Rating rating={book.volumeInfo.averageRating} />
+                  {book.volumeInfo.title && <h2>{book.volumeInfo.title}</h2>}
+
+                  {book.volumeInfo.authors && (
+                    <p>
+                      {book.volumeInfo.authors.length > 4
+                        ? book.volumeInfo.authors.slice(0, 4).join(", ") + "..."
+                        : book.volumeInfo.authors.join(", ")}
+                    </p>
+                  )}
+                </div>
+              </Wrapper>
+            ))}
+          </Card>
+          {/* pagination */}
+          <div>
+            <button onClick={handlePrevPage} className="carousel-control prev">
+              <MdKeyboardArrowLeft />
+            </button>
+            <span className="page">{seletedpage}</span>
+            <button onClick={handleNextPage} className="carousel-control next">
+              <MdChevronRight />
+            </button>
+          </div>
+          {/* modals */}
+          {localStorage.getItem("token") ? (
+            <>
+              {BorrowModalOpen && (
+                <BorrowModal open={BorrowModalOpen} children={undefined} />
+              )}
+            </>
+          ) : (
+            <Modal open={openModal} setOpenModal={setOpenModal}>
+              <Register />
+            </Modal>
           )}
         </>
-      ) : (
-        <Modal open={openModal} setOpenModal={setOpenModal}>
-          <Register />
-        </Modal>
       )}
     </Containerdiv>
   );

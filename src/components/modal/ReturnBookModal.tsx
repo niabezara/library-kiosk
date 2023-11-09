@@ -27,10 +27,14 @@ export default function ReturnModal({ open }: ReturnModalProps) {
   // check return book input
   const handleConfirm = () => {
     if (returntarget) {
-      if (matchingBooks.includes(returntarget)) {
+      if (
+        matchingBooks.some(
+          (item: { itemId: string }) => item.itemId === returntarget
+        )
+      ) {
         // Book found
         setMatchingBooks((prevMatchingBooks) =>
-          prevMatchingBooks.filter((bookId) => bookId !== returntarget)
+          prevMatchingBooks.filter((item) => item.itemId !== returntarget)
         );
         showSuccessMessage("Book Returned Successfully");
       } else {
