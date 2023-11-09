@@ -8,15 +8,14 @@ interface RatingProps {
 const Rating = ({ rating }: RatingProps) => {
   const renderRating = () => {
     const stars = [];
-
     // Loop for star elements
     for (let i = 1; i <= 5; i++) {
       if (i <= Math.floor(rating)) {
-        stars.push(<BiStar key={i} className="fullStar" />);
-      } else if (i - 0.5 === Math.floor(rating)) {
+        stars.push(<BiSolidStar key={i} className="fullStar" />);
+      } else if (i + 0.5 === Math.floor(rating) || 0.5 === Math.floor(rating)) {
         stars.push(<BiSolidStarHalf key={i} className="HalfStar" />);
       } else {
-        stars.push(<BiSolidStar key={i} className="emptyStar" />);
+        stars.push(<BiStar key={i} className="emptyStar" />);
       }
     }
 

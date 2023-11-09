@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { UseLibrary } from "../../context/LibraryContext";
 import {
@@ -23,6 +23,21 @@ interface ReturnModalProps {
 export default function ReturnModal({ open }: ReturnModalProps) {
   const { matchingBooks, setMatchingBooks, setReturnModal } = UseLibrary();
   const [returntarget, setReturnTarget] = useState("");
+  const RetRef = useRef<HTMLDivElement>(null);
+
+  // authomaticaly close the modal
+  useEffect(() => {
+    const handler = (event: any) => {
+      if (RetRef.current && !RetRef.current.contains(event.target as Node)) {
+        setReturnModal(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    };
+  });
 
   // check return book input
   const handleConfirm = () => {
@@ -53,7 +68,7 @@ export default function ReturnModal({ open }: ReturnModalProps) {
   return (
     <>
       <Overlay />
-      <RetModal>
+      <RetModal ref={RetRef}>
         <InputSection>
           <div>
             <FaBook className="InputIcon" />

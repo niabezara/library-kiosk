@@ -17,10 +17,10 @@ const StyledContainer = styled.div`
   position: absolute;
   background: linear-gradient(
       0deg,
-      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.771) 0%,
       rgba(0, 0, 0, 0.5) 100%
     ),
-    url(<path-to-image>), lightgray 50% / cover no-repeat;
+    url(<path-to-image>), #36363690 50% / cover no-repeat;
   inset: 0;
   display: flex;
   flex-direction: column;
@@ -46,15 +46,16 @@ const StyledButton = styled.button`
   padding: 1px;
   gap: 1rem;
   font-size: 1.8rem;
-  background-color: #fffdfd;
+  background-color: #ffffff;
+  opacity: 5;
   padding: 1.5rem 2rem;
   font-weight: 500;
   text-transform: capitalize;
   color: #000000;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.523);
   border: none;
   cursor: pointer;
   &:hover {
-    opacity: 0.25;
+    opacity: 1;
   }
 `;

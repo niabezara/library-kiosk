@@ -35,7 +35,7 @@ export default function BorrowModal({ open }: BorrowModalProps) {
                   ? item.title.slice(0, 15) + "..."
                   : item.title}
               </p>
-              <Id>{item.itemId}</Id>
+              <Id>ID: {item.itemId}</Id>
             </Box>
           )
         )}

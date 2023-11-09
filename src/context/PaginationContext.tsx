@@ -29,11 +29,15 @@ export function PaginationProvider({
   };
   // for books selection page
   const HandleBookPageNext = () => {
-    setSelectedPage(seletedpage + 1);
+    if (seletedpage > 1) {
+      setSelectedPage(seletedpage + 1);
+    }
   };
   // for books selection page
   const HandleBookPagePrev = () => {
-    setSelectedPage(seletedpage - 1);
+    if (seletedpage > 1) {
+      setSelectedPage(seletedpage - 1);
+    }
   };
 
   return (

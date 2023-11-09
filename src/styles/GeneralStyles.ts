@@ -58,6 +58,10 @@ export const InputSection = styled.section`
     padding-left: 50px;
     padding-right: 16px;
     outline: none;
+
+    &:focus {
+      color: var(--color-bg-2);
+    }
   }
 
   div {
@@ -111,7 +115,7 @@ export const Read = styled(Keep)`
   margin-bottom: 2rem;
 `;
 
-export const Id = styled.li`
+export const Id = styled.p`
   font-size: 1.2rem;
   font-weight: 300;
   color: var(--color-border);
