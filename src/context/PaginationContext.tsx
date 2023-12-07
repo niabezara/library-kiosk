@@ -29,10 +29,9 @@ export function PaginationProvider({
   };
   // for books selection page
   const HandleBookPageNext = () => {
-    if (seletedpage > 1) {
-      setSelectedPage(seletedpage + 1);
-    }
+    setSelectedPage(seletedpage + 1);
   };
+
   // for books selection page
   const HandleBookPagePrev = () => {
     if (seletedpage > 1) {
