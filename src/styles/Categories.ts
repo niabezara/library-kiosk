@@ -71,20 +71,15 @@ export const Card = styled.div`
     width: 40px;
     transition: 0.3s ease;
     cursor: pointer;
-    @media (min-width: 900px) {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-    }
   }
-
+  /* 
   .carousel-control.prev {
     left: 1rem;
   }
 
   .carousel-control.next {
     right: 1rem;
-  }
+  } */
 `;
 
 export const Button = styled(motion.button)`
